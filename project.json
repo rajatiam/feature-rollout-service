@@ -1,0 +1,35 @@
+{
+  "name": "Feature Flag Lab",
+  "kind": "flags",
+  "entity": "flag",
+  "accent": "#7c3aed",
+  "skills": "Deterministic hashing, percentage rollouts, feature evaluation",
+  "description": "Evaluate reproducible feature rollouts for customer identities.",
+  "example": {
+    "name": "new-checkout",
+    "enabled": true,
+    "rollout": 100,
+    "identity": "customer-42"
+  },
+  "port": 8114,
+  "fields": [
+    "name",
+    "enabled",
+    "rollout",
+    "identity"
+  ],
+  "stack": [
+    "Python",
+    "FastAPI",
+    "Angular",
+    "TypeScript",
+    "SQLite",
+    "Docker",
+    "Kubernetes",
+    "GitHub Actions"
+  ],
+  "demo_action": "evaluate",
+  "demo_expected": {
+    "active": true
+  }
+}
