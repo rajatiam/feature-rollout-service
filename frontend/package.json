@@ -1,5 +1,5 @@
 {
-  "name": "14-feature-flag-lab",
+  "name": "feature-rollout-service",
   "version": "2.0.0",
   "private": true,
   "scripts": {

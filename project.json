@@ -1,5 +1,5 @@
 {
-  "name": "Feature Flag Lab",
+  "name": "Feature Rollout Service",
   "kind": "flags",
   "entity": "flag",
   "accent": "#7c3aed",
@@ -31,5 +31,7 @@
   "demo_action": "evaluate",
   "demo_expected": {
     "active": true
-  }
+  },
+  "slug": "feature-rollout-service",
+  "engineering_version": "3.0.0"
 }

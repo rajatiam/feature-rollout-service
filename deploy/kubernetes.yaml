@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: 14-feature-flag-lab-data
+  name: feature-rollout-service-data
 spec:
   accessModes: [ReadWriteOnce]
   resources:
@@ -11,18 +11,18 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 14-feature-flag-lab
+  name: feature-rollout-service
 spec:
   replicas: 1
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: 14-feature-flag-lab
+      app: feature-rollout-service
   template:
     metadata:
       labels:
-        app: 14-feature-flag-lab
+        app: feature-rollout-service
     spec:
       securityContext:
         runAsNonRoot: true
@@ -30,7 +30,7 @@ spec:
         fsGroup: 10001
       containers:
         - name: app
-          image: 14-feature-flag-lab:local
+          image: feature-rollout-service:local
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8114
@@ -60,15 +60,15 @@ spec:
       volumes:
         - name: data
           persistentVolumeClaim:
-            claimName: 14-feature-flag-lab-data
+            claimName: feature-rollout-service-data
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: 14-feature-flag-lab
+  name: feature-rollout-service
 spec:
   selector:
-    app: 14-feature-flag-lab
+    app: feature-rollout-service
   ports:
     - port: 80
       targetPort: 8114
